@@ -29,16 +29,16 @@ export class TodoDashboardComponent implements OnInit {
       todoId: 'T004',
       completed: true,
     },
-    {
-      todoItem: 'Review pull requests',
-      todoId: 'T005',
-      completed: false,
-    },
-    {
-      todoItem: 'Update project documentation',
-      todoId: 'T006',
-      completed: false,
-    },
+    // {
+    //   todoItem: 'Review pull requests',
+    //   todoId: 'T005',
+    //   completed: false,
+    // },
+    // {
+    //   todoItem: 'Update project documentation',
+    //   todoId: 'T006',
+    //   completed: false,
+    // },
   ];
   constructor(private _snackBar: MatSnackBar) {}
 
