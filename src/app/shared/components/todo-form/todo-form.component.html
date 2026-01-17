@@ -1,6 +1,6 @@
-<!-- <div class="text-center">
+<div class="text-center">
     <h3>{{isInEditMode ? 'UpdateTodo ': 'Add Todo'}}</h3>
-</div> -->
+</div>
 
 <div class="card">
     <div class="card-body">
@@ -15,8 +15,17 @@
                 </strong>
             </div>
 
-            <button mat-raised-button class="btn-block" color="primary" [disabled]="todoForm.invalid">
+            <button mat-raised-button class="btn-block" 
+            *ngIf="!isInEditMode"
+            color="primary" [disabled]="todoForm.invalid">
                 Add Todo
+            </button>
+
+            <button
+            *ngIf="isInEditMode"
+            (click)="onUpdate()"
+            mat-raised-button class="btn-block" color="primary" type="button">
+                Update Todo
             </button>
         </form>
 
