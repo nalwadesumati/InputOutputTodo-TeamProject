@@ -1,0 +1,10 @@
+<p>confirm-dialog works!</p>
+<p>
+    {{getMsg || 'Are you sure, you want to remove?'}}
+</p>
+
+<div class="d-flex justify-content-between ">
+    <button (click)="onClose()" color="primary">Yes</button>
+    <button (click)="onClose()" color="warn">No</button>
+
+</div>

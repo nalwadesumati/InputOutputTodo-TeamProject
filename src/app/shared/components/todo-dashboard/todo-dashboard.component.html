@@ -1,0 +1,9 @@
+<div class="row mt-5">
+    <div class="col-md-6 mb-6 mb-md-0">
+        <app-todo-form (emitNewTodo)="getNewTodo($event)"></app-todo-form>
+    </div>
+
+    <div class="col-md-6">
+        <app-todo-list [todosArr]="todosArr"></app-todo-list>
+    </div>
+</div>
