@@ -8,6 +8,8 @@ import { Itodo } from '../../model/todo.model';
   styleUrls: ['./todo-dashboard.component.scss'],
 })
 export class TodoDashboardComponent implements OnInit {
+  editTodo !: Itodo
+
   todosArr: Itodo[] = [
     {
       todoItem: 'Learn Angular Reactive Forms',
@@ -40,9 +42,9 @@ export class TodoDashboardComponent implements OnInit {
     //   completed: false,
     // },
   ];
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private _snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   getNewTodo(todo: Itodo) {
     this.todosArr.unshift(todo);
     this._snackBar.open(
