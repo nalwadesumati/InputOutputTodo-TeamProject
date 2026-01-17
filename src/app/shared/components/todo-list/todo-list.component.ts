@@ -36,7 +36,10 @@ export class TodoListComponent implements OnInit {
       }
     })
   }
-
+onToEdit(todo: Itodo) {
+    console.log(todo);
+    this.emitEditTodo.emit(todo);
+  }
 
   
 }
