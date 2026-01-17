@@ -7,8 +7,8 @@
     </div>
 
     <div class="col-md-6">
-        <app-todo-list [todosArr]="todosArr"
-        (emitEditTodo)="getEditTodo($event)"
-        ></app-todo-list>
+        <app-todo-list 
+        (emitRemoveId)="getRemoveId($event)"
+        [todosArr]="todosArr"></app-todo-list>
     </div>
 </div>

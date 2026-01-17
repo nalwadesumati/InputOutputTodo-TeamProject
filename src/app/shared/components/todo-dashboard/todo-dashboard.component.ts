@@ -59,16 +59,13 @@ export class TodoDashboardComponent implements OnInit {
   }
 
 
-  getEditTodo(todo: Itodo) {
-    this.editTodo = todo
-  }
-
-  getUpdateTodo(todo: Itodo) {
-    let getIndex = this.todosArr.findIndex(t => t.todoId === todo.todoId)
-    if (getIndex >= 0) {
-      this.todosArr[getIndex] = todo
-      this._snackBar.open(
-      `TodoItem with name ${todo.todoItem} and id ${todo.todoId} Updated successfully`,
+  getRemoveId(id: string) {
+    let getIndex = this.todosArr.findIndex((t) => {
+      return t.todoId === id;
+    }); 
+    this.todosArr.splice(getIndex, 1);
+    this._snackBar.open(
+      `The todoItem with id ${id} removed successfully`,
       'Close',
       {
         duration: 3000,
@@ -76,6 +73,5 @@ export class TodoDashboardComponent implements OnInit {
         verticalPosition: 'top',
       },
     );
-    }
   }
 }
