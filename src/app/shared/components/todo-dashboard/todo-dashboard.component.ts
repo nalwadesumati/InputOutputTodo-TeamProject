@@ -55,4 +55,19 @@ export class TodoDashboardComponent implements OnInit {
       },
     );
   }
+  getRemoveId(id: string) {
+    let getIndex = this.todosArr.findIndex((t) => {
+      return t.todoId === id;
+    }); 
+    this.todosArr.splice(getIndex, 1);
+    this._snackBar.open(
+      `The todoItem with id ${id} removed successfully`,
+      'Close',
+      {
+        duration: 3000,
+        horizontalPosition: 'left',
+        verticalPosition: 'top',
+      },
+    );
+  }
 }
