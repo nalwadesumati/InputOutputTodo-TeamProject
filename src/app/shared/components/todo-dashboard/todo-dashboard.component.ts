@@ -8,7 +8,7 @@ import { Itodo } from '../../model/todo.model';
   styleUrls: ['./todo-dashboard.component.scss'],
 })
 export class TodoDashboardComponent implements OnInit {
-  editTodo !: Itodo
+  editTodo!: Itodo;
 
   todosArr: Itodo[] = [
     {
@@ -42,9 +42,9 @@ export class TodoDashboardComponent implements OnInit {
     //   completed: false,
     // },
   ];
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   getNewTodo(todo: Itodo) {
     this.todosArr.unshift(todo);
     this._snackBar.open(
@@ -58,11 +58,10 @@ export class TodoDashboardComponent implements OnInit {
     );
   }
 
-
   getRemoveId(id: string) {
     let getIndex = this.todosArr.findIndex((t) => {
       return t.todoId === id;
-    }); 
+    });
     this.todosArr.splice(getIndex, 1);
     this._snackBar.open(
       `The todoItem with id ${id} removed successfully`,
@@ -73,5 +72,9 @@ export class TodoDashboardComponent implements OnInit {
         verticalPosition: 'top',
       },
     );
+  }
+
+  getUpdateTodo(event: any) {
+    console.log(event);
   }
 }
